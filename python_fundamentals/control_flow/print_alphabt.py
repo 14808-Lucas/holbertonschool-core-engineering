@@ -3,5 +3,5 @@ alphabet = "abcdefghijklmnopqrstuvwxyz"
 result = ""
 for letter in alphabet:
     if letter != 'q' and letter != 'e':
-        result += letter
+        result = "{}{}".format(result, letter)
 print(result)
