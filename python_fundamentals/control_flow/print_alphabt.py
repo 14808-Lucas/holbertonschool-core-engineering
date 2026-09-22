@@ -4,4 +4,4 @@ result = ""
 for letter in alphabet:
     if letter != 'q' and letter != 'e':
         result = "{}{}".format(result, letter)
-print(result)
+print(result, end="")
