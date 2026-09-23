@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Program that imports add from add_0 and prints a formatted sum."""
+"""Program that imports add  and prints a formatted sum."""
 from add_0 import add
 
 
