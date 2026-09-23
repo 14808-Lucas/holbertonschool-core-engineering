@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Program that imports calculator functions and prints results."""
+"""Program that imports calculator functions and shows results."""
 from calculator_1 import add, sub, mul, div
 
 
