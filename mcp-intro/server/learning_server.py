@@ -73,5 +73,15 @@ def get_topic_details(topic_id: str) -> dict:
                     .format(topic_id, valid_ids))
 
 
+@mcp.resource("topics://catalog", mime_type="application/json")
+def get_topic_catalog() -> str:
+    """Return the list of available topic ids and titles."""
+    catalog = [
+        {"id": topic["id"], "title": topic["title"]}
+        for topic in load_topics()
+    ]
+    return json.dumps(catalog, indent=2)
+
+
 if __name__ == "__main__":
     mcp.run()
