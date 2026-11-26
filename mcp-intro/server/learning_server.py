@@ -49,5 +49,29 @@ def search_topics(query: str) -> list[dict]:
     return matches[:MAX_RESULTS]
 
 
+@mcp.tool(annotations={"readOnlyHint": True})
+def get_topic_details(topic_id: str) -> dict:
+    """Return full information for one topic by its id.
+
+    Use search_topics first to find the id.
+
+    Args:
+        topic_id: The exact topic id, for example "python-decorators".
+
+    Returns:
+        The full topic: id, title, summary, prerequisites, key_concepts,
+        common_mistakes, and practice_idea.
+    """
+    wanted = topic_id.strip().lower()
+    topics = load_topics()
+    for topic in topics:
+        if topic["id"] == wanted:
+            return topic
+
+    valid_ids = ", ".join(topic["id"] for topic in topics)
+    raise ToolError("No topic found with id '{}'. Valid ids are: {}."
+                    .format(topic_id, valid_ids))
+
+
 if __name__ == "__main__":
     mcp.run()
