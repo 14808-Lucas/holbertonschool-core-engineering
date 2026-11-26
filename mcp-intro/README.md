@@ -38,3 +38,24 @@ decorators. What should I review first?" The agent (host) uses its MCP
 client to call the server's topic tool. The server looks up "decorators"
 in `topics.json` and returns its prerequisites and description. The model
 then uses that structured data to write a student-friendly answer.
+
+## Setup
+
+    python3 -m venv .venv
+    source .venv/bin/activate
+    pip install -r requirements.txt
+
+## Running the Server
+
+The server uses FastMCP with the stdio transport (the default).
+
+    python3 server/learning_server.py
+
+The server name is `Programming Learning Server`. When it starts, FastMCP
+shows a banner and a "Starting MCP server ... with transport 'stdio'"
+message on stderr. The server then waits for MCP messages on stdin, so the
+terminal appears idle. Stop it with `Ctrl+C`. Normally an MCP client starts
+the server for you.
+
+Note: in a stdio server, stdout carries the MCP messages, so the server
+must never `print()`. Use `logging`, which writes to stderr.
