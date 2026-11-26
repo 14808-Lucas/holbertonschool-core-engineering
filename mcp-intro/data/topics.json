@@ -1,1 +1,56 @@
-[]
+[
+  {
+    "id": "python-functions",
+    "title": "Python Functions",
+    "summary": "How to define reusable blocks of code with def, pass arguments in, and get results back with return.",
+    "prerequisites": ["Variables", "Basic data types"],
+    "key_concepts": ["Parameters vs arguments", "Return values", "Default arguments", "*args and **kwargs"],
+    "common_mistakes": ["Printing a value instead of returning it", "Using a mutable default argument such as a list"],
+    "practice_idea": "Write a function that takes a list of numbers and returns their average, handling an empty list safely."
+  },
+  {
+    "id": "python-scope-closures",
+    "title": "Scope and Closures",
+    "summary": "Where Python looks up names (the LEGB rule) and how an inner function can remember variables from the function that created it.",
+    "prerequisites": ["Python Functions"],
+    "key_concepts": ["LEGB rule", "Nested functions", "Closures", "The nonlocal keyword"],
+    "common_mistakes": ["Assigning to an outer variable without nonlocal", "Expecting a loop variable to be captured per iteration in a closure"],
+    "practice_idea": "Create a make_counter() function that returns a function which increases and returns a count each time it is called."
+  },
+  {
+    "id": "python-decorators",
+    "title": "Python Decorators",
+    "summary": "A way to wrap a function with extra behavior, such as logging or timing, without changing the function's own code.",
+    "prerequisites": ["Python Functions", "Scope and Closures"],
+    "key_concepts": ["Functions as first-class objects", "Higher-order functions", "Wrapper functions", "functools.wraps"],
+    "common_mistakes": ["Forgetting to return the wrapper function", "Calling the function inside @ instead of passing it", "Losing the original name and docstring by not using functools.wraps"],
+    "practice_idea": "Create a decorator that logs the function name and arguments each time the decorated function is called."
+  },
+  {
+    "id": "python-list-comprehensions",
+    "title": "List Comprehensions",
+    "summary": "A compact syntax for building a new list by transforming and filtering items from another iterable.",
+    "prerequisites": ["For loops", "Lists"],
+    "key_concepts": ["Expression and loop clause", "Filtering with if", "Dict and set comprehensions", "Readability limits"],
+    "common_mistakes": ["Nesting comprehensions until they are hard to read", "Using a comprehension only for side effects such as printing"],
+    "practice_idea": "Given a list of words, build a list of the lengths of words longer than three letters using one comprehension."
+  },
+  {
+    "id": "python-classes-objects",
+    "title": "Classes and Objects",
+    "summary": "How to model data and behavior together by defining classes and creating object instances from them.",
+    "prerequisites": ["Python Functions", "Dictionaries"],
+    "key_concepts": ["__init__ and self", "Instance vs class attributes", "Methods", "Encapsulation with properties"],
+    "common_mistakes": ["Forgetting self as the first method parameter", "Using a mutable class attribute that is shared by all instances"],
+    "practice_idea": "Write a BankAccount class with deposit and withdraw methods that refuses to let the balance go below zero."
+  },
+  {
+    "id": "python-exceptions",
+    "title": "Exception Handling",
+    "summary": "How to detect and respond to errors at runtime with try, except, else, and finally, and how to raise your own errors.",
+    "prerequisites": ["Python Functions", "Classes and Objects"],
+    "key_concepts": ["try / except / else / finally", "Catching specific exceptions", "raise", "Custom exception classes"],
+    "common_mistakes": ["Using a bare except that hides real bugs", "Catching an exception and silently ignoring it"],
+    "practice_idea": "Write a function that reads a number from a string and raises a clear ValueError message when the input is invalid."
+  }
+]

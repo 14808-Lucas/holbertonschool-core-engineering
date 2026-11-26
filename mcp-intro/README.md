@@ -59,3 +59,12 @@ the server for you.
 
 Note: in a stdio server, stdout carries the MCP messages, so the server
 must never `print()`. Use `logging`, which writes to stderr.
+
+## Dataset
+
+`data/topics.json` is a small local dataset (a JSON list) of six Python
+topics. Each topic has: `id`, `title`, `summary`, `prerequisites`,
+`key_concepts`, `common_mistakes`, and `practice_idea`. Prerequisites
+reference other topic titles where possible, so the agent can suggest
+what to review first. The server reads this file; the agent never reads
+it directly.
